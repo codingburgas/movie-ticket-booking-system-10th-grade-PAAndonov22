@@ -1,5 +1,6 @@
 #include "Main.h"
 #include "UserReg.h"
+#include "UserLogin.h"
 
 int main()
 {
@@ -19,6 +20,7 @@ int main()
             registerUser();
             break;
         case 2:
+            loginUser();
             break;
         case 3:
             cout << "Exiting program." << endl;
