@@ -127,11 +127,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="cinema.cpp" />
+    <ClCompile Include="loggedInDashboard.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="UserLogin.cpp" />
     <ClCompile Include="UserReg.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="account.h" />
+    <ClInclude Include="cinema.h" />
     <ClInclude Include="Main.h" />
     <ClInclude Include="UserLogin.h" />
     <ClInclude Include="UserReg.h" />

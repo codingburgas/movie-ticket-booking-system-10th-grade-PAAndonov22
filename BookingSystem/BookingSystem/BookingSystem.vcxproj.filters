@@ -24,6 +24,12 @@
     <ClCompile Include="UserLogin.cpp">
       <Filter>Resource Files</Filter>
     </ClCompile>
+    <ClCompile Include="cinema.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
+    <ClCompile Include="loggedInDashboard.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Main.h">
@@ -33,6 +39,12 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="UserLogin.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cinema.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="account.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
