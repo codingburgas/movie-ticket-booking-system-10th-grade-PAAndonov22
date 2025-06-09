@@ -31,17 +31,17 @@ void listCinemas(const string& city) {
     cout << "\nCinemas in " << city << ":\n";
 
     if (city == "Sofia") {
-        cout << "- Cinema City Mall of Sofia\n";
-        cout << "- Arena Mladost\n";
-        cout << "- Odeon Cinema\n";
+        cout << "1. Cinema City Mall of Sofia\n";
+        cout << "2. Arena Mladost\n";
+        cout << "3. Odeon Cinema\n";
     }
     else if (city == "Plovdiv") {
-        cout << "- Cinema City Plovdiv\n";
-        cout << "- Lucky Cinema House\n";
+        cout << "1. Cinema City Plovdiv\n";
+        cout << "2. Lucky Cinema House\n";
     }
     else if (city == "Burgas") {
-        cout << "- Cinema City Burgas Plaza\n";
-        cout << "- Bulgaria Mall Cinema\n";
+        cout << "1. Cinema City Burgas Plaza\n";
+        cout << "2. Bulgaria Mall Cinema\n";
     }
     else {
         cout << "No information available for this city.\n";

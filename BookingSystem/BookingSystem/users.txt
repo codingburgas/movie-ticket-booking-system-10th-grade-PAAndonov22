@@ -1,1 +1,3 @@
 
+admin,admin@codingburgas.bg,admin113
+admin1,admin1@codingburgas.bg,admin12

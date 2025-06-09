@@ -28,5 +28,5 @@ int main()
         default:
             cout << "Invalid choice. Please try again." << endl;
         }
-    } while (choice != 3);
+    } while (choice != 3 && choice != 2);
 }

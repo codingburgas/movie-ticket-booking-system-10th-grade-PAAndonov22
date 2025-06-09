@@ -2,7 +2,7 @@
 #include <fstream>
 #include <string>
 #include "UserLogin.h"
-
+#include "account.h"
 using namespace std;
 
 void loginUser() {
@@ -44,4 +44,5 @@ void loginUser() {
     else {
         cout << "Unable to open file." << endl;
     }
+    showLoggedInMenu(username);
 }
