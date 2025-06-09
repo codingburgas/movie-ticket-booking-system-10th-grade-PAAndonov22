@@ -15,36 +15,27 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="loggedInDashboard.cpp">
+    <ClCompile Include="src\main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="main.cpp">
+    <ClCompile Include="src\Dashboard.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cinema.cpp">
-      <Filter>Resource Files</Filter>
+    <ClCompile Include="src\Cinema.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="UserReg.cpp">
-      <Filter>Resource Files</Filter>
-    </ClCompile>
-    <ClCompile Include="UserLogin.cpp">
-      <Filter>Resource Files</Filter>
+    <ClCompile Include="src\User.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="UserReg.h">
+    <ClInclude Include="include\Dashboard.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="account.h">
+    <ClInclude Include="include\Cinema.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="cinema.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="Main.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="UserLogin.h">
+    <ClInclude Include="include\User.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

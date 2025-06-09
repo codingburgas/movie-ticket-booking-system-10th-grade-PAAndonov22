@@ -1,7 +1,7 @@
+#include "../include/Cinema.h"
 #include <iostream>
-#include "cinema.h"
 
-void chooseCity() {
+void Cinema::chooseCity() {
     int choice;
     cout << "Choose a city:\n";
     cout << "1. Sofia\n";
@@ -27,7 +27,7 @@ void chooseCity() {
     }
 }
 
-void listCinemas(const string& city) {
+void Cinema::listCinemas(const string& city) {
     cout << "\nCinemas in " << city << ":\n";
 
     if (city == "Sofia") {

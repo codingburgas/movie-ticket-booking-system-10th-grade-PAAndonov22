@@ -1,19 +1,17 @@
+#include "../include/Dashboard.h"
+#include "../include/Cinema.h"
 #include <iostream>
-#include "account.h"
-#include "cinema.h"
 
 using namespace std;
 
-void showLoggedInMenu(const string& username) {
+void Dashboard::show(const User& user) {
     int choice;
-
     do {
         cout << "------------------------\n";
-        cout << "Welcome, " << username << "!\n";
+        cout << "Welcome, " << user.getUsername() << "!\n";
         cout << "------------------------\n";
-
         cout << "1. Choose Cinema\n";
-        cout << "2. View Profile\n";
+        cout << "2. View Profile (Coming soon)\n";
         cout << "3. Logout\n";
         cout << "Enter your choice: ";
         cin >> choice;
@@ -21,19 +19,18 @@ void showLoggedInMenu(const string& username) {
 
         switch (choice) {
         case 1:
-            chooseCity();
+            Cinema::chooseCity();
             break;
         case 2:
-            cout << "Profile functionality coming soon!" << endl;
+            cout << "Profile page not implemented yet." << endl;
             break;
         case 3:
             cout << "You have been logged out." << endl;
             break;
         default:
-            cout << "Invalid choice. Please try again." << endl;
+            cout << "Invalid choice." << endl;
+            break;
         }
-
         cout << endl;
-
     } while (choice != 3);
 }

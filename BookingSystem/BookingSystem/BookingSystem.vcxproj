@@ -18,6 +18,17 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Cinema.cpp" />
+    <ClCompile Include="src\Dashboard.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\User.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="include\Cinema.h" />
+    <ClInclude Include="include\Dashboard.h" />
+    <ClInclude Include="include\User.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
@@ -126,20 +137,6 @@
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="cinema.cpp" />
-    <ClCompile Include="loggedInDashboard.cpp" />
-    <ClCompile Include="main.cpp" />
-    <ClCompile Include="UserLogin.cpp" />
-    <ClCompile Include="UserReg.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="account.h" />
-    <ClInclude Include="cinema.h" />
-    <ClInclude Include="Main.h" />
-    <ClInclude Include="UserLogin.h" />
-    <ClInclude Include="UserReg.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
