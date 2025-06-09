@@ -1,5 +1,6 @@
 #ifndef CINEMA_H
 #define CINEMA_H
+
 #include <string>
 using namespace std;
 

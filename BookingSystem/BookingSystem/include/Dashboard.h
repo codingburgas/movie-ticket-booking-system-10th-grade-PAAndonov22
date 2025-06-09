@@ -1,10 +1,12 @@
 #ifndef DASHBOARD_H
 #define DASHBOARD_H
-#include "User.h"
+
+#include <string>
+using namespace std;
 
 class Dashboard {
 public:
-    static void show(const User& user);
+    static void show(const string& username);
 };
 
 #endif

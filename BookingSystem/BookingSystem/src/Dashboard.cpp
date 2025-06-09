@@ -1,18 +1,23 @@
 #include "../include/Dashboard.h"
 #include "../include/Cinema.h"
 #include <iostream>
+#include <windows.h>
 
 using namespace std;
 
-void Dashboard::show(const User& user) {
+extern void setColor(int color);
+
+void Dashboard::show(const string& username) {
     int choice;
+    setColor(11);
+    cout << "\n--- Logged In Dashboard ---\n";
+    setColor(15);
+    cout << "Welcome, "; setColor(14); cout << username << "!\n"; setColor(15);
+
     do {
-        cout << "------------------------\n";
-        cout << "Welcome, " << user.getUsername() << "!\n";
-        cout << "------------------------\n";
-        cout << "1. Choose Cinema\n";
-        cout << "2. View Profile (Coming soon)\n";
-        cout << "3. Logout\n";
+        cout << "\n1. "; setColor(9); cout << "Choose Cinema\n"; setColor(15);
+        cout << "2. "; setColor(9); cout << "View Profile\n"; setColor(15);
+        cout << "3. "; setColor(12); cout << "Logout\n\n"; setColor(15);
         cout << "Enter your choice: ";
         cin >> choice;
         cin.ignore();
@@ -22,15 +27,13 @@ void Dashboard::show(const User& user) {
             Cinema::chooseCity();
             break;
         case 2:
-            cout << "Profile page not implemented yet." << endl;
+            cout << "Username: "; setColor(14); cout << username << "\n"; setColor(15);
             break;
         case 3:
-            cout << "You have been logged out." << endl;
+            cout << "You have been logged out.\n";
             break;
         default:
-            cout << "Invalid choice." << endl;
-            break;
+            setColor(12); cout << "Invalid choice.\n"; setColor(15);
         }
-        cout << endl;
     } while (choice != 3);
 }

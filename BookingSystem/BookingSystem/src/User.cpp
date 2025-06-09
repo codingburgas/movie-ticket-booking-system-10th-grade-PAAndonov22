@@ -1,36 +1,44 @@
+#include "../include/User.h"
 #include <iostream>
 #include <fstream>
-#include "../include/User.h"
+#include <windows.h>
 
-User::User() {}
+using namespace std;
 
-User::User(string username, string email, string password)
-    : username(username), email(email), password(password) {}
+void setColor(int color);
 
-string User::getUsername() const {
-    return username;
-}
+void User::registerUser() {
+    string username, email, password;
+    setColor(10); cout << "--- Register ---\n"; setColor(15);
 
-bool User::registerUser() {
+    cout << "Enter username: ";
+    getline(cin, username);
+    cout << "Enter email: ";
+    getline(cin, email);
+    cout << "Enter password: ";
+    getline(cin, password);
+
     ofstream userFile("users.txt", ios::app);
     if (userFile.is_open()) {
         userFile << username << "," << email << "," << password << endl;
         userFile.close();
-        cout << "Registration successful!" << endl;
-        return true;
+        setColor(10); cout << "Registration successful!\n"; setColor(15);
     }
-    cout << "Unable to open file." << endl;
-    return false;
+    else {
+        setColor(12); cout << "Unable to open file.\n"; setColor(15);
+    }
 }
 
-User User::loginUser() {
-    string usernameInput, passwordInput;
-    string line, storedUsername, storedEmail, storedPassword;
+bool User::loginUser(string& username) {
+    string password, line, storedUsername, storedEmail, storedPassword;
+    bool loginSuccess = false;
+
+    setColor(10); cout << "--- Login ---\n"; setColor(15);
 
     cout << "Enter username: ";
-    getline(cin, usernameInput);
+    getline(cin, username);
     cout << "Enter password: ";
-    getline(cin, passwordInput);
+    getline(cin, password);
 
     ifstream userFile("users.txt");
     if (userFile.is_open()) {
@@ -43,15 +51,25 @@ User User::loginUser() {
                 storedEmail = line.substr(pos1 + 1, pos2 - pos1 - 1);
                 storedPassword = line.substr(pos2 + 1);
 
-                if (storedUsername == usernameInput && storedPassword == passwordInput) {
-                    cout << "Login successful!" << endl;
-                    return User(storedUsername, storedEmail, storedPassword);
+                if (storedUsername == username && storedPassword == password) {
+                    loginSuccess = true;
+                    break;
                 }
             }
         }
-        cout << "Invalid username or password." << endl;
-    } else {
-        cout << "Unable to open file." << endl;
+        userFile.close();
+
+        if (loginSuccess) {
+            setColor(10); cout << "Login successful!\n"; setColor(15);
+            return true;
+        }
+        else {
+            setColor(12); cout << "Invalid username or password.\n"; setColor(15);
+            return false;
+        }
     }
-    return User();
+    else {
+        setColor(12); cout << "Unable to open file.\n"; setColor(15);
+        return false;
+    }
 }

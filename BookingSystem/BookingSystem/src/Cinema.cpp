@@ -1,13 +1,45 @@
 #include "../include/Cinema.h"
 #include <iostream>
+#include <windows.h>
+#include <iomanip>
+
+using namespace std;
+
+extern void setColor(int color);
+
+void printCentered(const string& text) {
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    int consoleWidth = 80;
+
+    if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi)) {
+        consoleWidth = csbi.srWindow.Right - csbi.srWindow.Left + 1;
+    }
+
+    int len = text.length();
+    int pos = max((consoleWidth - len) / 2, 0);
+
+    for (int i = 0; i < pos; ++i) cout << ' ';
+    cout << text << endl;
+}
 
 void Cinema::chooseCity() {
     int choice;
-    cout << "Choose a city:\n";
-    cout << "1. Sofia\n";
-    cout << "2. Plovdiv\n";
-    cout << "3. Burgas\n";
-    cout << "Enter your choice (1-3): ";
+    system("cls");
+    setColor(11);
+    printCentered("========================================");
+    printCentered("           CINEMA BOOKING SYSTEM         ");
+    printCentered("========================================\n");
+    setColor(15);
+
+    setColor(14);
+    printCentered("Available Cities:\n");
+    setColor(15);
+
+    printCentered("1. Sofia");
+    printCentered("2. Plovdiv");
+    printCentered("3. Burgas");
+    cout << endl;
+    printCentered("Enter your choice (1-3): ");
     cin >> choice;
     cin.ignore();
 
@@ -22,28 +54,33 @@ void Cinema::chooseCity() {
         listCinemas("Burgas");
         break;
     default:
-        cout << "Invalid choice. Please try again." << endl;
+        setColor(12); printCentered("Invalid choice. Please try again.\n"); setColor(15);
         break;
     }
 }
 
 void Cinema::listCinemas(const string& city) {
-    cout << "\nCinemas in " << city << ":\n";
+    system("cls");
+    setColor(10);
+    printCentered("========================================");
+    printCentered("         Cinemas in " + city + "           ");
+    printCentered("========================================\n");
+    setColor(15);
 
     if (city == "Sofia") {
-        cout << "1. Cinema City Mall of Sofia\n";
-        cout << "2. Arena Mladost\n";
-        cout << "3. Odeon Cinema\n";
+        printCentered("1. Cinema City Mall of Sofia");
+        printCentered("2. Arena Mladost");
+        printCentered("3. Odeon Cinema");
     }
     else if (city == "Plovdiv") {
-        cout << "1. Cinema City Plovdiv\n";
-        cout << "2. Lucky Cinema House\n";
+        printCentered("1. Cinema City Plovdiv");
+        printCentered("2. Lucky Cinema House");
     }
     else if (city == "Burgas") {
-        cout << "1. Cinema City Burgas Plaza\n";
-        cout << "2. Bulgaria Mall Cinema\n";
+        printCentered("1. Cinema City Burgas Plaza");
+        printCentered("2. Bulgaria Mall Cinema");
     }
     else {
-        cout << "No information available for this city.\n";
+        printCentered("No information available for this city.");
     }
 }
