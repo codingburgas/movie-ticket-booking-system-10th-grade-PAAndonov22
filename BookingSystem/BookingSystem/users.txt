@@ -1,3 +1,5 @@
 
 admin,admin@codingburgas.bg,admin113
 admin1,admin1@codingburgas.bg,admin12
+papi,papi1,papi1
+papis,papi@codingburgas.bg,Mat83079

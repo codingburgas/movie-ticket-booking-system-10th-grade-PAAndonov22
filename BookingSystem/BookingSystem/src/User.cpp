@@ -13,8 +13,22 @@ void User::registerUser() {
 
     cout << "Enter username: ";
     getline(cin, username);
-    cout << "Enter email: ";
-    getline(cin, email);
+
+    //Email validation loop
+    while (true) {
+        cout << "Enter email: ";
+        getline(cin, email);
+
+        if (email.find('@') != string::npos && email.find('.') != string::npos) {
+            break;
+        }
+        else {
+            setColor(12);
+            cout << "Invalid email. Please enter a valid email (must contain '@' and '.').\n";
+            setColor(15);
+        }
+    }
+
     cout << "Enter password: ";
     getline(cin, password);
 

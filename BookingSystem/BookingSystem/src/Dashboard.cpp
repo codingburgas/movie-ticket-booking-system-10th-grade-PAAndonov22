@@ -10,7 +10,14 @@ extern void setColor(int color);
 void Dashboard::show(const string& username) {
     int choice;
     setColor(11);
-    cout << "\n--- Logged In Dashboard ---\n";
+    system("cls");
+    cout << R"(
+ ____            _     _                         _ 
+|  _ \  __ _ ___| |__ | |__   ___   __ _ _ __ __| |
+| | | |/ _` / __| '_ \| '_ \ / _ \ / _` | '__/ _` |
+| |_| | (_| \__ \ | | | |_) | (_) | (_| | | | (_| |
+|____/ \__,_|___/_| |_|_.__/ \___/ \__,_|_|  \__,_|
+)" << endl;
     setColor(15);
     cout << "Welcome, "; setColor(14); cout << username << "!\n"; setColor(15);
 
